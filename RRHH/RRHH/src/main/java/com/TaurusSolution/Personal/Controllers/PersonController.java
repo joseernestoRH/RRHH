@@ -1,6 +1,6 @@
 package com.TaurusSolution.Personal.Controllers;
 
-import com.TaurusSolution.Personal.Beans.Person;
+import com.TaurusSolution.Personal.entities.Person;
 import com.TaurusSolution.Personal.Services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,8 @@ public class PersonController {
     @RequestMapping(value = "/GetAll")
     public List<Person> getAllPerson()
     {
-        return personService.getPersons();
+        return personService.findAllPersons();
+
     }
 
 }

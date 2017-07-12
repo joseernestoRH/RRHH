@@ -1,9 +1,11 @@
 package com.TaurusSolution.Personal.Services;
 
-import com.TaurusSolution.Personal.Beans.Person;
+
+import com.TaurusSolution.Personal.Repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import com.TaurusSolution.Personal.entities.*;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -16,20 +18,12 @@ import java.util.List;
 public class PersonService {
 
     @Autowired
-    private Person person;
+    private PersonRepository personRepository;
 
-    public List<Person> getPersons()
+
+    public List<Person> findAllPersons()
     {
-
-        person.setAddress("jose");
-        person.setLastName("Rodriguez");
-        person.setAddress("mi casa");
-        person.setBithDate(new Date());
-
-        List<Person> personList = new LinkedList<Person>();
-        personList.add(person);
-
-        return personList;
+        return personRepository.findAll();
     }
 
 
