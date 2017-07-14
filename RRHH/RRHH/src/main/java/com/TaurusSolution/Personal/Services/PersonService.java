@@ -17,13 +17,17 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    @Autowired
+
     private PersonRepository personRepository;
 
-
+    @Autowired
+    public void setPersonRepository(PersonRepository personRepository)
+    {
+        this.personRepository = personRepository;
+    }
     public List<Person> findAllPersons()
     {
-        return personRepository.findAll();
+        return personRepository.getAll();
     }
 
 

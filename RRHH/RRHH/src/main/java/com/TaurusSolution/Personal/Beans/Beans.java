@@ -1,5 +1,6 @@
 package com.TaurusSolution.Personal.Beans;
 
+import com.TaurusSolution.Personal.Services.PersonService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,8 +11,16 @@ import org.springframework.context.annotation.Configuration;
 public class Beans {
 
     @Bean
-    public Person person()
+    public com.TaurusSolution.Personal.entities.Person person()
     {
-        return new Person();
+        return new com.TaurusSolution.Personal.entities.Person();
     }
+
+    @Bean
+    public PersonService personService()
+    {
+        return new PersonService();
+    }
+
+
 }
